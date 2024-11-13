@@ -16,7 +16,6 @@ export default class ColorSchemeToggler extends Component {
 
   @tracked
   storedOverride = this.keyValueStore.getItem(COLOR_SCHEME_OVERRIDE_KEY);
-  console.log(storedOverride)
   
   get toggleButtonIcon() {
     switch (this.OSMode) {
@@ -66,6 +65,7 @@ export default class ColorSchemeToggler extends Component {
   }
 
   <template>
+      55555
     <DButton
       @action={{this.toggleScheme}}
       @icon={{this.toggleButtonIcon}}
