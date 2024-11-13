@@ -9,13 +9,15 @@ import {
   colorSchemeOverride,
 } from "../lib/color-scheme-override";
 
+
 export default class ColorSchemeToggler extends Component {
   @service keyValueStore;
   @service session;
 
   @tracked
   storedOverride = this.keyValueStore.getItem(COLOR_SCHEME_OVERRIDE_KEY);
-
+  console.log(storedOverride)
+  
   get toggleButtonIcon() {
     switch (this.OSMode) {
       case "dark":
