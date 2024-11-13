@@ -37,14 +37,18 @@ export default class ColorSchemeToggler extends Component {
       case "light":
         if (this.keyValueStore.getItem(COLOR_SCHEME_OVERRIDE_KEY) === "dark") {
           this.keyValueStore.removeItem(COLOR_SCHEME_OVERRIDE_KEY);
+          document.body.classList.add("light");
         } else {
           this.keyValueStore.setItem(COLOR_SCHEME_OVERRIDE_KEY, "dark");
+          document.body.classList.add("dark");
         }
         break;
       case "dark":
         if (this.keyValueStore.getItem(COLOR_SCHEME_OVERRIDE_KEY) !== "light") {
           this.keyValueStore.setItem(COLOR_SCHEME_OVERRIDE_KEY, "light");
+          document.body.classList.add("light");
         } else {
+          document.body.classList.add("dark");
           this.keyValueStore.removeItem(COLOR_SCHEME_OVERRIDE_KEY);
         }
         break;
